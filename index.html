@@ -1,66 +1,61 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Cooper - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: white;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 40px 60px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 80px;
-            height: 100px;
-        }
-
-        .name-container {
-            position: relative;
-            width: 200px;
-            height: 80px;
-        }
-
-        .name-part {
-            position: absolute;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .daniel {
-            transform: rotate(-35deg);
-            transform-origin: right center;
-            right: 50%;
-            top: 50%;
-            margin-right: 5px;
-        }
-
-        .cooper {
-            transform: rotate(35deg);
-            transform-origin: left center;
-            left: 50%;
-            top: 50%;
-            margin-left: 5px;
-        }
-
-        .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Grid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .card {
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background: white;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 60px;
+      font-size: 3rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .name-part {
+      display: inline-block;
+    }
+
+    .name-part:first-child {
+      transform: rotate(-35deg);
+      transform-origin: center;
+    }
+
+    .name-part:last-child {
+      transform: rotate(35deg);
+      transform-origin: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .project {
       background: white;
       border-radius: 12px;
       overflow: hidden;
@@ -68,53 +63,39 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       display: flex;
       flex-direction: column;
+      text-decoration: none;
+      color: inherit;
     }
 
-    .card:hover {
+    .project:hover {
       transform: translateY(-5px);
       box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
-    .card-image {
+    .project-image {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .card-content {
-      padding: 20px;
-      flex-grow: 1;
+      height: 270px;
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      overflow: hidden;
     }
 
-    .card-title {
+    .logo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      padding: 27px;
+    }
+
+    .project-title {
+      padding: 27px;
       font-size: 1.5rem;
-      margin-bottom: 10px;
+      font-weight: 600;
       color: #333;
-    }
-
-    .card-description {
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 15px;
-      flex-grow: 1;
-    }
-
-    .tech-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: auto;
-    }
-
-    .tag {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 0.85rem;
+      text-align: center;
+      border-top: 1px solid #e0e0e0;
     }
 
     @media (max-width: 768px) {
@@ -122,52 +103,60 @@
         font-size: 2rem;
       }
       
-      .grid {
+      .gallery {
         grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
-</head>
 <body>
-    <div class="header">
-        <div class="name-container">
-            <span class="name-part daniel">DANIEL</span>
-            <span class="name-part cooper">COOPER</span>
-        </div>
-    </div>
-
+  <div class="container">
+    <h1>
+      <span class="name-part">Daniel</span>
+      <span class="name-part">Cooper</span>
+    </h1>
     <div class="gallery">
-        <a href="https://danmauricecooper.github.io/google_lens_mixed_methods.html/" class="project" target="_blank">
-            <div class="project-image">
-                <img src="https://techtips.colonielibrary.org/wp-content/uploads/2023/12/lens.jpg" alt="Google Lens" class="logo">
-            </div>
-            <div class="project-title">Google Lens, live translation</div>
-        </a>
+      <a href="https://danmauricecooper.github.io/google_lens_mixed_methods.html/" class="project" target="_blank">
+        <div class="project-image">
+          <img src="https://techtips.colonielibrary.org/wp-content/uploads/2023/12/lens.jpg" alt="Google Lens" class="logo">
+        </div>
+        <div class="project-title">Google Lens, live translation</div>
+      </a>
 
-        <a href="https://danmauricecooper.github.io/pret_a_manger_notifications/" class="project" target="_blank">
-            <div class="project-image">
-                <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="10" y="15" width="180" height="50" rx="25" fill="#8B0000"/>
-                    <text x="100" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Pret A Manger</text>
-                </svg>
-            </div>
-            <div class="project-title">Pret-A-Manger Competitive Analysis</div>
-        </a>
+      <a href="https://danmauricecooper.github.io/pret_a_manger_notifications/" class="project" target="_blank">
+        <div class="project-image">
+          <svg class="logo" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="15" width="180" height="50" rx="25" fill="#8B0000"/>
+            <text x="100" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Pret A Manger</text>
+          </svg>
+        </div>
+        <div class="project-title">Pret-A-Manger Competitive Analysis</div>
+      </a>
 
-        <a href="https://danmauricecooper.github.io/cts_use_case_mixed_method/" class="project" target="_blank"> 
-            <div class="project-image">
-                <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25267915/HT007_Circle_To_Search_Android_B.png?quality=90&strip=all&crop=16.666666666667,0,66.666666666667,100" alt="Circle to Search" class="logo">
-            </div>
-            <div class="project-title">Google's Circle to Search Use Case Mixed Method Research</div>
-        </a>
+      <a href="https://danmauricecooper.github.io/cts_use_case_mixed_method/" class="project" target="_blank">
+        <div class="project-image">
+          <img src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25267915/HT007_Circle_To_Search_Android_B.png?quality=90&strip=all&crop=16.666666666667,0,66.666666666667,100" alt="Circle to Search" class="logo">
+        </div>
+        <div class="project-title">Google's Circle to Search Use Case Mixed Method Research</div>
+      </a>
 
-        <a href="https://danmauricecooper.github.io/herbalife_APAC_usability/" class="project" target="_blank">
-            <div class="project-image">
-                <img src="https://1000logos.net/wp-content/uploads/2019/08/Herbalife-Logo.png" alt="Herbalife" class="logo"> 
-            </div>
-            <div class="project-title">Herbalife APAC Usability Study</div>
-        </a>
+      <a href="https://danmauricecooper.github.io/herbalife_APAC_usability/" class="project" target="_blank">
+        <div class="project-image">
+          <img src="data:image/png;base64,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" alt="Herbalife" class="logo"> 
+        </div>
+        <div class="project-title">Herbalife APAC Usability Study</div>
+      </a>
+
+      <a href="#" class="project" target="_blank">
+        <div class="project-image">
+          <svg class="logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="80" fill="#4285F4"/>
+            <text x="100" y="115" font-family="Arial, sans-serif" font-size="60" font-weight="bold" fill="white" text-anchor="middle">UX</text>
+          </svg>
+        </div>
+        <div class="project-title">UX Research Project</div>
+      </a>
     </div>
+  </div>
 </body>
 </html>
